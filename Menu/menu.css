@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(image/iStock-1324017792.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Oleo Script', cursive;
+    line-height: 28px;
+    letter-spacing: 3px;
+}
+
+/* CSS for section section:SidebarMenu */
+.sidebar {
+    position: fixed;
+    /* 捲動頁面，也會固定位置 */
+    background-color: #ffffff;
+    width: 30%;
+    min-width: 350px;
+    height: 100vh;
+    z-index: 999;
+    position: fixed;
+    /* 捲動頁面，也會固定位置 */
+    top: 0;
+    left: 0;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+
+/* .sidebar-header {
+    background-color: #f6c8ce;
+    height: 85px;
+} */
+
+.profile {
+    background-color: #f6c8ce;
+    height: 85px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    /* 照片與文字間距 */
+    gap: 30px;
+}
+
+.profile-img {
+    margin-bottom: 10px;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.profile-img-line {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #f0f0f0;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-zh {
+    color: #ffffff;
+    font-family: 'Kaisei HarunoUmi', serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 4px;
+}
+
+.profile-en {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Oleo Script', cursive;
+    line-height: 50px;
+    letter-spacing: 3px;
+}
+
+nav {
+    background-color: white;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+
+    /* 下列上方.sidebar已設定過 */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+nav li {
+    height: 100px;
+    width: 100%;
+}
+
+
+nav a {
+    /* width: 100%; */
+    height: 100%;
+    padding: 0 80px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(44, 44, 44);
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-en {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.nav-zh {
+    margin-left: 10px;
+    font-family: 'Kaisei HarunoUmi', serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+hr {
+    color: #adadad;
+    align-items: center;
+    width: auto;
+    height: 0.5px;
+}
+
+.divider {
+    width: 154px;
+    height: 1px;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+/* To achieve the visual layout where the divider is between items, we remove the top margin from the list item and place the divider before the link */
+.sidebar-nav ul li:not(:first-child) {
+    margin-top: 0;
+}
+
+@media(max-width:800px) {
+    .sidebar {
+        width: 100%;
+    }
+}
