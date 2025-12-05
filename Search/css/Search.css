@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Kaisei HarunoUmi', serif;
+    background: white;
+}
+
+/* 主容器 */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* header 粉色全寬 */
+.header-wrapper {
+    width: 100%;
+    background-color: #fcd0d9;
+    position: relative;
+    z-index: 2;
+}
+
+.header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 55px 20px 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-button {
+    width: auto;
+    /* 或未定義 */
+    margin: 0px 10px 0px 0px;
+    /* 上右下左 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.icon-button img {
+    width: 41px;
+    height: 41px;
+    display: block;
+}
+
+/* 搜尋列 */
+.search-bar-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #987063;
+    border-radius: 35px;
+    height: 50px;
+    margin-top: 0;
+    /* 或調整 margin-top 讓跟 Logo 對齊 */
+    padding-left: 20px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.search-placeholder {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 1.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-button {
+    width: 49px;
+    height: 35px;
+    background-color: #c8c8c8;
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.search-button img {
+    width: 30.5px;
+    height: 30.5px;
+}
+
+
+.title {
+    font-family: 'Oleo Script', cursive;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 桌機：三張一排 */
+    gap: 20px;
+    padding: 0px;
+}
+
+/* 圖片外框設定 */
+.image-card {
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    line-height: 0;
+}
+
+/* 圖片設定 */
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover 動畫 */
+.image-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 側選單出現時的背景遮罩 */
+.overlay {
+    display: none;
+    /* 預設隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    /* 比 sidebar 低或同層 */
+}
+
+/* menu側選單 */
+.sidebar {
+    display: none;
+    /* 預設隱藏，原教學設為flex */
+    position: fixed;
+    /* 捲動頁面，也會固定位置 */
+    min-width: 400px;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    top: 0;
+    left: 0;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    line-height: 28px;
+    letter-spacing: 3px;
+    background-color: white;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    /* 可選：加陰影更明顯 */
+}
+
+.profile {
+    background-color: #f6c8ce;
+    width: 100%;
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+    /* 照片與文字間距 */
+    gap: 30px;
+    /* 不被擠壓 */
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.profile-img {
+    margin-bottom: 10px;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.profile-img-line {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-zh {
+    color: #ffffff;
+    /* font-family: 'Kaisei HarunoUmi', serif; */
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 4px;
+}
+
+.profile-en {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Oleo Script', cursive;
+    line-height: 50px;
+    letter-spacing: 3px;
+}
+
+nav {
+    background-color: white;
+    flex: 1;
+    /* 使整塊nav內容符合sidebar邊界 */
+    width: 100%;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+
+    /* 下列上方.sidebar已設定過 */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+nav li {
+    height: 100px;
+    width: 100%;
+}
+
+
+nav a {
+    height: 100%;
+    padding: 0 60px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(44, 44, 44);
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-en {
+    font-family: 'Oleo Script', cursive;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.nav-zh {
+    /* font-family: 'Kaisei HarunoUmi', serif; */
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.sidebar-hr {
+    color: #adadad;
+    align-items: center;
+    width: auto;
+    align-self: flex-start;
+}
+
+/* To achieve the visual layout where the divider is between items, we remove the top margin from the list item and place the divider before the link */
+.sidebar-nav ul li:not(:first-child) {
+    margin-top: 0;
+}
+
+/* 手機板 */
+@media screen and (max-width: 767px) {
+    .image-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .sidebar {
+        width: 50%;
+    }
+}
