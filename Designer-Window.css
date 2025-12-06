@@ -1,28 +1,32 @@
 #card {
-    display: none;
+    /* overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 auto;*/
+
+    /* display: flex; */
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    position: fixed;
     top: 0;
-    left: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+
     z-index: 1055;
-    /* margin: 1.75rem auto; */
-    width: 100%;
-    min-height: 100vh;
-    outline: 0;
-    padding: 20px;
+    /* width: 100%; */
+    pointer-events: auto;
+    border-radius: 15px;
+    max-width: 500px;
+    max-height: 400px;
+
+    background-color: #fff;
+    background-clip: padding-box;
+    font-family: 'Kaisei HarunoUmi', serif;
 }
 
 .card-info {
-    max-width: 490px;
     width: 100%;
-    background-color: #ffffff;
     border-radius: 15px;
     overflow: hidden;
-    font-family: 'Kaisei HarunoUmi', serif;
 }
 
 .card-img {
@@ -58,4 +62,12 @@
     letter-spacing: 1.4px;
     text-align: justify;
     margin: 0;
+}
+
+@media (max-width: 767px) {
+    .card-info {
+        position: sticky;
+        bottom: 0;
+    }
+
 }
